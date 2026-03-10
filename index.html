@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历 | Works</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Dynamic 3D Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="page-container">
+
+        <!-- Page 1: 个人概况 (Profile) - Fixed Large Cards -->
+        <div class="page-view page-profile active" id="page-1">
+            <div class="profile-layout">
+                <!-- Card A: Identity -->
+                <div class="profile-card identity-card">
+                    <div class="avatar-large">
+                        <img src="figs/avatar.jpg" alt="曹谦一" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                    </div>
+                    <h1 class="main-name">曹谦一</h1>
+                    <p class="main-title">东南大学应用统计专业硕士复试考生</p>
+                    <div class="contact-grid">
+                        <div class="contact-item-wrapper">
+                            <p class="contact-label">联系电话：</p>
+                            <a href="#" class="contact-item" data-copy="19155605976" data-type="phone">19155605976</a>
+                        </div>
+                        <div class="contact-item-wrapper">
+                            <p class="contact-label">常用邮箱：</p>
+                            <a href="#" class="contact-item" data-copy="340931@whut.edu.cn" data-type="email">340931@whut.edu.cn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card B: About (Switchable) -->
+                <div class="profile-card about-card">
+                    <div class="about-nav">
+                        <button class="about-tab active" data-target="edu">教育背景</button>
+                        <button class="about-tab" data-target="bio">个人简历</button>
+                        <button class="about-tab" data-target="award">获得奖项</button>
+                    </div>
+                    <div class="about-content active" id="edu">
+                        <p>2022.09-2026.06，武汉理工大学，金融学专业，本科</p>
+                        <p>GPA：3.664
+                        <p>核心课程：高等数学 98.2、Python 程序设计基础 97.7、线性代数 90.4、中级宏观经济学 91.5、计量经济学 89.4、金融数据挖掘与分析 90.1</p>
+                        <p>CET-6 ： 569分</p>
+                    </div>
+                    <div class="about-content" id="bio">
+                        <p class="quote">本科期间学术基础</p>
+                        <p>本科期间扎实研习数理统计、数据分析相关知识，打下统计基础。曾获全国统计建模竞赛三等奖，并以此成果为基础完成电商评论有用性排序模型相关学术论文初稿，初步掌握贝叶斯分析、统计建模等方法，尝试完成从数据处理到实证验证的统计研究流程，积累了一定的学术写作经验。愿于研究生阶段深耕应用统计领域，潜心钻研、精进能力，以实践践行所学。</p>
+                        <p class="quote">个人兴趣爱好</p>
+                        <p>热爱篮球、羽毛球等球类运动，保持良好的作息与身体素质。<br>闲暇时练习小提琴，已通过专业六级考试，积累了一定艺术功底与审美素养。<br>大学期间加入编程相关社团，参与过游戏开发的实践活动。</p>
+                    </div>
+                    <div class="about-content" id="award">
+                        <p class="quote">2023.11，全国大学生数学竞赛三等奖</p>
+                        <p class="quote">2024.05，全国大学生市场调查与分析大赛 - 省级三等奖</p>
+                        <p>担任团队队长，统筹项目推进。负责核心数据分析与建模工作，为项目获奖提供技术支撑。</p>
+                        <p class="quote">2025.10，全国大学生统计建模大赛 - 国家三等奖</p>
+                        <p>参与全国统计建模竞赛，以团队合作的方式完成了电商评论有用性排序模型的研究。模型基于贝叶斯分析，考虑了评论的多模态特征、用户行为等因素，对评论按照有用性进行排名。</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 2: 论文展示 (Paper Display) -->
+        <div class="page-view page-paper" id="page-6">
+            <div class="paper-nav-sticky">
+                <div class="paper-nav-inner">
+                    <span class="paper-nav-title">论文初稿展示</span>
+                    <span style="width: 400px; display: inline-block;"></span>
+                    <nav class="paper-anchor-nav">
+                        <a href="#paper-bg" class="anchor-link active" data-section="bg">研究背景</a>
+                        <a href="#paper-frame" class="anchor-link" data-section="frame">指标框架</a>
+                        <a href="#paper-model" class="anchor-link" data-section="model">核心模型</a>
+                        <a href="#paper-result" class="anchor-link" data-section="result">实证结果</a>
+                        <a href="#paper-innov" class="anchor-link" data-section="innov">研究创新</a>
+                        <a href="#paper-concl" class="anchor-link" data-section="concl">科研总结</a>
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="paper-scroll-content">
+                <section class="paper-section" id="paper-bg">
+                    <div class="section-content" style="min-height: 50vh;">
+                        <div class="bg-left">
+                            <h3 class="section-subtitle">论文概要</h3>
+                            <div class="paper-image-container">
+                                <img src="figs/a1.png" alt="论文标题页" class="paper-image">
+                                <div class="image-caption">
+                                    <strong>本研究聚焦电商评论有用性排序问题</strong>，提出融合CNN与Transformer的TIFCM模型及三层动态加权体系，经真实数据验证有效，展现了多模态与时间感知的统计建模创新。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-right">
+                            <h3 class="section-subtitle">研究对比</h3>
+                            <table class="compare-table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>文本</th>
+                                        <th>图像</th>
+                                        <th>视频</th>
+                                        <th>时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>传统研究</td>
+                                        <td class="check-true">✓</td>
+                                        <td class="check-false">✕</td>
+                                        <td class="check-false">✕</td>
+                                        <td class="check-true">✓</td>
+                                    </tr>
+                                    <tr>
+                                        <td>本研究</td>
+                                        <td class="check-true">✓</td>
+                                        <td class="check-true">✓</td>
+                                        <td class="check-true">✓</td>
+                                        <td class="check-true">✓</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h3 class="section-subtitle">创新点</h3>
+                            <ul class="pain-points">
+                                <li>多模态特征的深度融合与语义一致性挖掘</li>
+                                <li>差异化的评论有用性计算框架设计</li>
+                                <li>动态时间感知的三层加权体系构建</li>
+                            </ul>
+                            <p class="competition-note">论文基于第十一届全国大学生统计建模大赛国家三等奖项目深化</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="paper-section" id="paper-frame">
+                    <div class="section-content" style="min-height: 50vh;">
+                        <div class="frame-top">
+                            <h3 class="section-subtitle">研究框架</h3>
+                            <div class="flow-chart">
+                                <div class="flow-row">
+                                    <div class="flow-node" data-tooltip="采集电商平台多模态评论数据">
+                                        <span class="node-icon">📊</span>
+                                        <span class="node-text">原始数据采集</span>
+                                        <span class="node-method">网络爬虫</span>
+                                    </div>
+                                    <div class="flow-arrow right">→</div>
+                                    <div class="flow-node" data-tooltip="提取原创性、视觉性、互动性指标">
+                                        <span class="node-icon">📈</span>
+                                        <span class="node-text">三维指标提取</span>
+                                        <span class="node-method">特征工程</span>
+                                    </div>
+                                </div>
+                                <div class="flow-connector">
+                                    <div class="flow-arrow down-right">↓</div>
+                                </div>
+                                <div class="flow-row reverse">
+                                    <div class="flow-node flow-node-highlight" data-tooltip="多模态特征融合">
+                                        <span class="node-icon">🔗</span>
+                                        <span class="node-text">多模态融合</span>
+                                        <span class="node-method">特征融合</span>
+                                    </div>
+                                    <div class="flow-arrow left">←</div>
+                                    <div class="flow-node" data-tooltip="计算层次分析法权重">
+                                        <span class="node-icon">⚖️</span>
+                                        <span class="node-text">三层权重计算</span>
+                                        <span class="node-method">AHP层次分析</span>
+                                    </div>
+                                </div>
+                                <div class="flow-connector">
+                                    <div class="flow-arrow down-left">↓</div>
+                                </div>
+                                <div class="flow-row">
+                                    <div class="flow-node flow-node-highlight" data-tooltip="动态时间感知策略">
+                                        <span class="node-icon">⏰</span>
+                                        <span class="node-text">动态时间感知</span>
+                                        <span class="node-method">时间衰减函数</span>
+                                    </div>
+                                    <div class="flow-arrow right">→</div>
+                                    <div class="flow-node" data-tooltip="验证模型有效性并排序">
+                                        <span class="node-icon">✅</span>
+                                        <span class="node-text">模型验证与排序</span>
+                                        <span class="node-method">稳健性检验</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frame-bottom">
+                            <h3 class="section-subtitle">三维指标体系</h3>
+                            <div class="paper-image-container">
+                                <img src="figs/a2.png" alt="三维指标体系" class="paper-image">
+                                <div class="image-caption">
+                                    本研究通过京东真实评论样本，构建了包含<strong>原创性、视觉性、互动性</strong>三类指标的评论有用性评价体系，同时给出了主题一致性等指标的统计计算方式（如余弦相似度）。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="paper-section" id="paper-model">
+                    <div class="section-content" style="min-height: 85vh; max-height: 80vh;">
+                        <div class="models-top">
+                            <h3 class="section-subtitle">核心模型</h3>
+                            <div class="three-models">
+                                <div class="model-card">
+                                    <h4>多模态融合-三层加权</h4>
+                                    <div class="paper-image-container">
+                                        <img src="figs/a10.png" alt="三层加权公式" class="paper-image">
+                                    </div>
+                                    <p class="model-meaning">统计意义：融合多模态特征，综合考虑原创性、视觉性、互动性三个维度的加权得分</p>
+                                    <p class="model-innovation">创新点：动态加权设计解决主观偏差，体现统计方法的创新应用</p>
+                                </div>
+                                <div class="model-card">
+                                    <h4>贝叶斯分析 <span class="model-abbr">(IBPA)</span></h4>
+                                    <div class="paper-image-container">
+                                        <img src="figs/a3.png" alt="IBPA模型" class="paper-image">
+                                    </div>
+                                    <p class="model-meaning">统计意义：通过贝叶斯后验概率更新对评论有用性的先验信念</p>
+                                    <p class="model-innovation">创新点：<strong>Beta共轭先验</strong>解决数据稀疏性问题，体现贝叶斯统计方法的实际应用</p>
+                                </div>
+                                <div class="model-card">
+                                    <h4><span class="keyword-highlight">动态时间感知</span>模型</h4>
+                                    <div class="paper-image-container">
+                                        <img src="figs/a7.png" alt="动态时间感知模型" class="paper-image">
+                                    </div>
+                                    <div class="formula">𝑓(𝑡)=𝑒<sup>−𝜆<sub>𝑛</sub> 𝑡</sup></div>
+                                    <p class="model-meaning">统计意义：评论有用性随时间指数衰减，越新的评论权重越大</p>
+                                    <p class="model-innovation">创新点：<span class="keyword-highlight">动态时间感知策略</span>，解决评论时效性问题</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="models-bottom">
+                            <h3 class="section-subtitle">TIFCM 多模态融合框架</h3>
+                            <div class="paper-image-container">
+                                <img src="figs/a4.png" alt="TIFCM多模态融合架构" class="paper-image">
+                                <div class="image-caption">
+                                    <strong>深度学习+统计框架融合</strong>，通过自建视觉模型针对性解决商品评论契合度问题。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="paper-section" id="paper-result">
+                    <div class="section-content" style="min-height: 100vh;">
+                        <h3 class="section-subtitle">实证结果</h3>
+                        <div class="result-grid">
+                            <div class="result-card">
+                                <h4>数据基础</h4>
+                                <div class="paper-image-container">
+                                    <img src="figs/a8.png" alt="数据基础" class="paper-image">
+                                    <div class="image-caption">
+                                        <strong>27,829</strong> 样本数 · <strong>5</strong> 产品类别
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result-card">
+                                <h4>权重分析</h4>
+                                <div class="paper-image-container">
+                                    <img src="figs/a6.png" alt="权重分析" class="paper-image">
+                                    <div class="image-caption">
+                                        <strong>ENNM权重训练</strong>结果显示BPNN&gt;320时波动&lt;0.0003
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result-card">
+                                <h4>模型有效性</h4>
+                                <div class="paper-image-container">
+                                    <img src="figs/a5.png" alt="模型有效性" class="paper-image">
+                                    <div class="image-caption">
+                                        按照表中参数训练TIFCM模型，验证模型有效性结果显示：训练准确率94.0%、测试准确率92.7%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result-card" data-tooltip="稳定性分析体现应用统计对模型稳健性的核心关注">
+                                <h4>稳健性验证</h4>
+                                <div class="paper-image-container">
+                                    <img src="figs/a9.png" alt="稳健性验证" class="paper-image">
+                                    <div class="image-caption">
+                                        五种商品数据的<strong>稳定性分析</strong>均表明奖励强度的波动＜0.03
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="paper-section" id="paper-innov">
+                    <div class="section-content" style="min-height: 30vh;">
+                        <div class="innov-left">
+                            <h3 class="section-subtitle">研究创新</h3>
+                            <ul class="innov-points">
+                                <li data-compare="传统研究仅用文本，本研究引入图像+视频">
+                                    <strong>多模态特征融合</strong>
+                                    <span>自建多模态模型，充分利用文本、图像、视频三类数据</span>
+                                </li>
+                                <li data-compare="传统研究权重主观设定，本研究采用AHP">
+                                    <strong>三层加权统计框架</strong>
+                                    <span>通过神经网络训练客观确定原创性、视觉性、互动性权重</span>
+                                </li>
+                                <li data-compare="传统研究使用静态模型，本研究利用动态时间感知">
+                                    <strong>动态时间感知策略</strong>
+                                    <span>引入时间衰减因子，解决评论时效性问题</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="innov-right">
+                            <h3 class="section-subtitle">科研总结</h3>
+                            <div class="summary-blocks">
+                                <div class="summary-item">
+                                    <h4>科研基础</h4>
+                                    <p>掌握<strong>统计建模</strong>、<strong>数据分析</strong>、<strong>机器学习</strong>等核心方法</p>
+                                </div>
+                                <div class="summary-item">
+                                    <h4>学术写作</h4>
+                                    <p>按照「问题提出-模型设计-实验验证」的论文写作逻辑，掌握模型可视化、数据实证的核心表达技巧</p>
+                                </div>
+                                <div class="summary-item">
+                                    <h4>后续思考</h4>
+                                    <p>深入研究<strong>多模态模型</strong>在评论分析中的应用，探索更先进的多模态融合方法</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="paper-section" id="paper-concl">
+                    <div class="section-content" style="height: 30vh;">
+                        <div class="conclusion-final">
+                            <h3 class="section-subtitle">总结</h3>
+                            <p>本研究构建了基于<span class="keyword-highlight"></span>多模态特征融合</span>与<span class="keyword-highlight">动态时间感知策略</span>的电商评论价值排序模型，在统计建模方法上进行了创新，实证结果表明模型有效性相较于传统研究有显著提升。<br>以上为学生的论文初稿展示，感谢各位老师的指导！</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Page 7: 致谢 (Acknowledgments) - Minimal Typography -->
+        <div class="page-view page-minimal" id="page-7">
+            <div class="thanks-container">
+                <h2 class="thanks-title">Thanks for Watching.</h2>
+                <p class="thanks-sub">恳请各位老师给予指导</p>
+                <div class="thanks-divider"></div>
+                <p class="thanks-contact">曹谦一  武汉理工大学</p>
+                <p class="thanks-contact" style="margin-top: 1rem;">340931@whut.edu.cn</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Floating Navigation Buttons -->
+    <button id="nav-btn" class="nav-fab">
+        <span class="nav-text">Next</span>
+        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+    </button>
+    
+    <button id="back-home-btn" class="nav-fab hidden">
+        <span class="nav-text">Home</span>
+        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
